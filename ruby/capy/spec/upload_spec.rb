@@ -8,7 +8,7 @@ describe 'Upload de arquivos', :upload do
         @arquivo = Dir.pwd + '/spec/fixtures/arquivo.txt'
         @imagem  = Dir.pwd + '/spec/fixtures/imagem.jpg'
     end
-
+ 
     it 'upload com arquivo de texto' do
         attach_file('file-upload', @arquivo)
         click_button 'Upload'
@@ -17,13 +17,14 @@ describe 'Upload de arquivos', :upload do
         expect(div_arquivo.text).to eql 'arquivo.txt'
     end
 
-    it 'upload com arquivo de imagem' do
+    it 'upload com arquivo de imagem', :upload_imagem do  #o parametro upload_imagem aqui é uma tag 
         attach_file('file-upload', @imagem)
         click_button 'Upload'
 
-        sleep 5
         img = find('#new-image')
         expect(img[:src]).to include '/uploads/imagem.jpg' 
+
+        
         
     end
 
