@@ -4,7 +4,7 @@ describe 'Caixa de opções' do
     
     it 'item do select simples' do
         
-        visit 'http://training-wheels-protocol.herokuapp.com/dropdown'
+        visit '/dropdown'
 
         select('Loki', from: 'dropdown')
     
@@ -12,7 +12,7 @@ describe 'Caixa de opções' do
 
     it 'item especifico com o find' do
         
-        visit 'http://training-wheels-protocol.herokuapp.com/dropdown'
+        visit '/dropdown'
         
         seletor = find('.avenger-list')
         seletor.find('option', text: 'Bucky').select_option
@@ -20,7 +20,7 @@ describe 'Caixa de opções' do
 
     it 'escolhendo um item aleatorio no select' do
     
-        visit 'http://training-wheels-protocol.herokuapp.com/dropdown'
+        visit '/dropdown'
         seletor = find('.avenger-list')
         seletor.all('option').sample.select_option
 

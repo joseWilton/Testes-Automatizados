@@ -8,7 +8,7 @@ def Login (usuario, senha)
     click_button 'Login'
 end
  
-describe 'Forms' do
+describe 'Forms', :loginform do
 
     it 'login com sucesso' do
        
